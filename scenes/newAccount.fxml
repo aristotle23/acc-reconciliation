@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox minWidth="60.0" prefHeight="382.0" prefWidth="547.0" spacing="20.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fitz.NewAccountController">
+   <children>
+      <GridPane alignment="CENTER_LEFT" vgap="10.0" VBox.vgrow="ALWAYS">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="30.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label text="Account Name:" />
+            <Label text="Account Number:" GridPane.rowIndex="1" />
+            <Label text="Bank Name:" GridPane.rowIndex="2" />
+            <TextField fx:id="txt_accname" GridPane.columnIndex="1" />
+            <TextField fx:id="txt_accno" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <TextField fx:id="txt_bnkname" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+         </children>
+         <VBox.margin>
+            <Insets left="10.0" right="10.0" />
+         </VBox.margin>
+      </GridPane>
+      <Separator prefWidth="200.0" />
+      <Label text="Importing mismatch or incomplete Cash Book or Bank Statement will result to an incorrect account reconciliation. Multiple import files are seperated with (;)" wrapText="true">
+         <VBox.margin>
+            <Insets left="10.0" right="10.0" />
+         </VBox.margin>
+         <font>
+            <Font name="Arial Italic" size="13.0" />
+         </font>
+      </Label>
+      <GridPane alignment="CENTER_LEFT" vgap="10.0" VBox.vgrow="ALWAYS">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="30.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <HBox prefHeight="100.0" prefWidth="200.0" spacing="10.0" GridPane.columnIndex="1">
+               <children>
+                  <TextField fx:id="txt_cb" HBox.hgrow="ALWAYS" />
+                  <Button fx:id="btn_cb" mnemonicParsing="false" onAction="#browseCB" text="...." />
+               </children>
+            </HBox>
+            <HBox prefHeight="100.0" prefWidth="200.0" spacing="10.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <children>
+                  <TextField fx:id="txt_bk" HBox.hgrow="ALWAYS" />
+                  <Button fx:id="btn_bk" mnemonicParsing="false" onAction="#browseBK" text="...." />
+               </children>
+            </HBox>
+            <Label text="Cash Book:" />
+            <Label mnemonicParsing="true" text="Bank Statement:" GridPane.rowIndex="1" />
+         </children>
+         <VBox.margin>
+            <Insets left="10.0" right="10.0" />
+         </VBox.margin>
+      </GridPane>
+      <HBox prefHeight="17.0" prefWidth="527.0">
+         <children>
+            <Region prefHeight="200.0" prefWidth="200.0" HBox.hgrow="ALWAYS" />
+            <Button fx:id="btn_import" mnemonicParsing="false" onAction="#importAccount" style="-fx-background-color: linear-gradient(to bottom, #639ddb,#447cd6);" text="Import" textFill="#f8f6f6">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Button>
+         </children>
+         <padding>
+            <Insets left="10.0" right="10.0" />
+         </padding>
+      </HBox>
+   </children>
+   <padding>
+      <Insets bottom="20.0" left="10.0" right="10.0" top="20.0" />
+   </padding>
+</VBox>

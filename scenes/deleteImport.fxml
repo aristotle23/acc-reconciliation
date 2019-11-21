@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #ccc;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Label text="Listed below are imports of both cash book and statment of the account currently opened in the active tab. Select import you choose to delete" wrapText="true">
+         <VBox.margin>
+            <Insets bottom="10.0" />
+         </VBox.margin>
+      </Label>
+      <TableView fx:id="tbl_delete" onMouseClicked="#recordSelected" opacity="0.79" prefHeight="200.0" prefWidth="200.0" style="-fx-table-cell-border-color: transparent;" VBox.vgrow="ALWAYS">
+        <columns>
+          <TableColumn fx:id="col_stamp" editable="false" minWidth="150.0" prefWidth="-1.0" text="Timestamp" />
+          <TableColumn fx:id="col_line" editable="false" maxWidth="1.7976931348623157E308" minWidth="400.0" prefWidth="-1.0" text="Timeline" />
+        </columns>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </TableView>
+      <HBox spacing="10.0">
+         <children>
+            <Label maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minWidth="40.0" text="Note: " HBox.hgrow="ALWAYS">
+               <font>
+                  <Font name="Arial Bold" size="13.0" />
+               </font>
+            </Label>
+            <Label text="Any deleted import can not be recovered. Please be certain of import you choose to delete" wrapText="true">
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+            </Label>
+         </children>
+         <VBox.margin>
+            <Insets top="10.0" />
+         </VBox.margin>
+      </HBox>
+   </children>
+   <padding>
+      <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+   </padding>
+</VBox>
